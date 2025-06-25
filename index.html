@@ -32,10 +32,54 @@
     /* Header Section */
     .header {
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
       padding: 40px;
       background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      height: 420px;
+      position: relative;
+    }
+
+    /* Titre du contrat centré en haut */
+    .professional-title {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 20px 40px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border: 2px solid rgba(102, 126, 234, 0.2);
+    }
+
+    .professional-title h2:first-child {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .professional-title h2:nth-child(2) {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #667eea;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .professional-title p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #764ba2;
+      margin: 0;
+    }
+
+    /* Contenu principal centré */
+    .main-content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 60px;
+      width: 100%;
     }
 
     .left-section {
@@ -84,10 +128,8 @@
     }
 
     .description {
-      flex: 1;
-      margin-left: 50px;
-      margin-top: 220px;
       width: 600px;
+      margin-top: 40px;
     }
 
     .description p {
@@ -95,9 +137,10 @@
       color: #555;
       line-height: 1.8;
       background: rgba(255,255,255,0.8);
-      padding: 20px;
+      padding: 25px;
       border-radius: 10px;
       border-left: 4px solid #667eea;
+      text-align: justify;
     }
 
     /* Section Styles */
@@ -291,10 +334,11 @@
     }
 
     .contact-grid {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
       margin-bottom: 20px;
+      align-items: center;
     }
 
     .contact-item {
@@ -303,6 +347,15 @@
       justify-content: center;
       gap: 10px;
       font-size: 1rem;
+    }
+
+    .additional-info {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #34495e;
     }
 
     .linkedin-link {
@@ -334,19 +387,29 @@
   <div class="container">
     <!-- Header -->
     <div class="header">
-      <div class="left-section">
-        <div class="photo-container">
-          <img src="images_site/profil.jpeg" alt="Photo de profil">
-          <!-- Remplacez par: <img src="votre-photo.jpg" alt="Photo de profil"> -->
-        </div>
-        
-        <div class="name-section">
-          <h1 class="name">ORNEL<br>ZINSOU-PLY</h1>
-        </div>
+      <!-- Titre du contrat centré -->
+      <div class="professional-title">
+        <h2>Recherche Contrat de Professionnalisation</h2>
+        <h2>Cloud, Système et Sécurité (CSS)</h2>
+        <p>Septembre 2025 - 12 mois</p>
       </div>
 
-      <div class="description">
-        <p><strong>Étudiant en 2ᵉ année à l'ESEO</strong>, passionné par la conception, l'optimisation et la sécurisation des systèmes informatiques performants. Ambitieux et curieux, je vise à développer des solutions innovantes pour soutenir la transformation numérique des entreprises.</p>
+      <!-- Contenu principal centré -->
+      <div class="main-content">
+        <div class="left-section">
+          <div class="photo-container">
+            <img src="images_site/profil.jpeg" alt="Photo de profil">
+            <!-- Remplacez par: <img src="votre-photo.jpg" alt="Photo de profil"> -->
+          </div>
+         
+          <div class="name-section">
+            <h1 class="name">ORNEL<br>ZINSOU-PLY</h1>
+          </div>
+        </div>
+
+        <div class="description">
+          <p><strong>Étudiant en 2ᵉ année à l'ESEO</strong>, passionné par la conception, l'optimisation et la sécurisation des systèmes informatiques performants. Ambitieux et curieux, je vise à développer des solutions innovantes pour soutenir la transformation numérique des entreprises.</p>
+        </div>
       </div>
     </div>
 
@@ -372,18 +435,20 @@
     <div class="section">
       <h2 class="section-title">Projets</h2>
       <div class="projects-grid">
-        <div class="card project-card" onclick="openModal('project1')">
+        <!-- Projet Personnel (en cours) - Le plus récent -->
+        <div class="card project-card" onclick="openModal('project3')">
           <div class="card-image">
-             <img src="images_site/InfraLog.png" alt="Logo de l'entreprise" style="width:100%; height:auto; border-radius: 10px;">
+            🚀
           </div>
           <div class="card-content">
-            <h3 class="card-title">Projet InfraLogiciel</h3>
-            <div class="card-date">ESEO, France (2024)</div>
-            <p class="card-summary">Infrastructure virtualisée avec application web PHP et base de données.</p>
-            <p class="card-tech">Git, VirtualBox, Vagrant, Apache2, MariaDB</p>
+            <h3 class="card-title">Projet Personnel</h3>
+            <div class="card-date">En cours</div>
+            <p class="card-summary">Développement d'une application innovante en cours de conception.</p>
+            <p class="card-tech">Technologies modernes</p>
           </div>
         </div>
 
+        <!-- Projet Cloud Computing (2025) -->
         <div class="card project-card" onclick="openModal('project2')">
           <div class="card-image">
             ☁️
@@ -396,15 +461,16 @@
           </div>
         </div>
 
-        <div class="card project-card" onclick="openModal('project3')">
+        <!-- Projet InfraLogiciel (2024) - Le plus ancien -->
+        <div class="card project-card" onclick="openModal('project1')">
           <div class="card-image">
-            🚀
+             <img src="images_site/InfraLog.png" alt="Logo de l'entreprise" style="width:100%; height:auto; border-radius: 10px;">
           </div>
           <div class="card-content">
-            <h3 class="card-title">Projet Personnel</h3>
-            <div class="card-date">En cours</div>
-            <p class="card-summary">Développement d'une application innovante en cours de conception.</p>
-            <p class="card-tech">Technologies modernes</p>
+            <h3 class="card-title">Projet InfraLogiciel</h3>
+            <div class="card-date">ESEO, France (2024)</div>
+            <p class="card-summary">Infrastructure virtualisée avec application web PHP et base de données.</p>
+            <p class="card-tech">Git, VirtualBox, Vagrant, Apache2, MariaDB</p>
           </div>
         </div>
       </div>
@@ -417,10 +483,19 @@
           <strong>📍 Résidence :</strong> France
         </div>
         <div class="contact-item">
-          <strong>📧 Email :</strong> ornel.zinsouply@reseau.eseo.fr
+          <strong>📧 Email :</strong> <a href="mailto:ornel.zinsouply@reseau.eseo.fr" style="color: white; text-decoration: none;">ornel.zinsouply@reseau.eseo.fr</a>
         </div>
         <div class="contact-item">
           <strong>📱 Contact :</strong> +33 6 89 75 34 39
+        </div>
+      </div>
+     
+      <div class="additional-info">
+        <div class="contact-item">
+          <strong>🚗 Permis :</strong> B
+        </div>
+        <div class="contact-item">
+          <strong>🌍 Langues :</strong> Français et Anglais (B1)
         </div>
         <div class="contact-item">
           <a class="linkedin-link" href="https://www.linkedin.com/in/ornel-zinsou-ply/" target="_blank" rel="noopener noreferrer">
