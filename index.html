@@ -59,38 +59,12 @@
       font-size: 14px;
       color: #666;
       flex-shrink: 0;
-      position: relative;
-      cursor: pointer;
     }
 
     .photo-container img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .photo-container input[type="file"] {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    .photo-container:hover {
-      background: #ccc;
-    }
-
-    .photo-container:hover::after {
-      content: "Cliquez pour changer";
-      position: absolute;
-      background: rgba(0,0,0,0.7);
-      color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 12px;
-      z-index: 5;
     }
 
     .name-section {
@@ -198,22 +172,6 @@
       font-size: 3rem;
       position: relative;
       overflow: hidden;
-      cursor: pointer;
-    }
-
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .card-image input[type="file"] {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: pointer;
-      z-index: 10;
     }
 
     .card-image::before {
@@ -226,20 +184,10 @@
       background: rgba(0,0,0,0.3);
       opacity: 0;
       transition: opacity 0.3s ease;
-      z-index: 5;
     }
 
     .card:hover .card-image::before {
       opacity: 1;
-    }
-
-    .card-image:hover::after {
-      content: "Cliquez pour changer l'image";
-      position: absolute;
-      color: white;
-      font-size: 14px;
-      font-weight: bold;
-      z-index: 15;
     }
 
     .card-content {
@@ -380,26 +328,6 @@
     body {
       min-width: 1240px;
     }
-
-    /* Image upload buttons */
-    .upload-hint {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0,0,0,0.7);
-      color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 12px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .photo-container:hover .upload-hint,
-    .card-image:hover .upload-hint {
-      opacity: 1;
-    }
   </style>
 </head>
 <body>
@@ -408,9 +336,8 @@
     <div class="header">
       <div class="left-section">
         <div class="photo-container">
-          <input type="file" id="profilePhoto" accept="image/*" onchange="handleProfilePhoto(event)">
-          <span id="photoPlaceholder">Cliquez pour ajouter votre photo</span>
-          <img id="profileImage" style="display: none;" alt="Photo de profil">
+          <span>Votre Photo</span>
+          <!-- Remplacez par: <img src="votre-photo.jpg" alt="Photo de profil"> -->
         </div>
         
         <div class="name-section">
@@ -429,10 +356,7 @@
       <div class="cards-grid">
         <div class="card" onclick="openModal('experience1')">
           <div class="card-image">
-            <input type="file" id="experiencePhoto" accept="image/*" onchange="handleExperiencePhoto(event)" onclick="event.stopPropagation()">
-            <span id="experienceIcon">🏢</span>
-            <img id="experienceImage" style="display: none;" alt="Image expérience">
-            <div class="upload-hint">Cliquez pour changer l'image</div>
+            🏢
           </div>
           <div class="card-content">
             <h3 class="card-title">Stage en Développement Embarqué</h3>
@@ -450,10 +374,7 @@
       <div class="projects-grid">
         <div class="card project-card" onclick="openModal('project1')">
           <div class="card-image">
-            <input type="file" id="project1Photo" accept="image/*" onchange="handleProject1Photo(event)" onclick="event.stopPropagation()">
-            <span id="project1Icon">⚙️</span>
-            <img id="project1Image" style="display: none;" alt="Image projet 1">
-            <div class="upload-hint">Cliquez pour changer l'image</div>
+            ⚙️
           </div>
           <div class="card-content">
             <h3 class="card-title">Projet InfraLogiciel</h3>
@@ -465,10 +386,7 @@
 
         <div class="card project-card" onclick="openModal('project2')">
           <div class="card-image">
-            <input type="file" id="project2Photo" accept="image/*" onchange="handleProject2Photo(event)" onclick="event.stopPropagation()">
-            <span id="project2Icon">☁️</span>
-            <img id="project2Image" style="display: none;" alt="Image projet 2">
-            <div class="upload-hint">Cliquez pour changer l'image</div>
+            ☁️
           </div>
           <div class="card-content">
             <h3 class="card-title">Projet Cloud Computing</h3>
@@ -480,10 +398,7 @@
 
         <div class="card project-card" onclick="openModal('project3')">
           <div class="card-image">
-            <input type="file" id="project3Photo" accept="image/*" onchange="handleProject3Photo(event)" onclick="event.stopPropagation()">
-            <span id="project3Icon">🚀</span>
-            <img id="project3Image" style="display: none;" alt="Image projet 3">
-            <div class="upload-hint">Cliquez pour changer l'image</div>
+            🚀
           </div>
           <div class="card-content">
             <h3 class="card-title">Projet Personnel</h3>
@@ -578,91 +493,6 @@
   </div>
 
   <script>
-    // Function to handle profile photo upload
-    function handleProfilePhoto(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          const profileImage = document.getElementById('profileImage');
-          const placeholder = document.getElementById('photoPlaceholder');
-          
-          profileImage.src = e.target.result;
-          profileImage.style.display = 'block';
-          placeholder.style.display = 'none';
-        };
-        reader.readAsDataURL(file);
-      }
-    }
-
-    // Function to handle experience photo upload
-    function handleExperiencePhoto(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          const experienceImage = document.getElementById('experienceImage');
-          const icon = document.getElementById('experienceIcon');
-          
-          experienceImage.src = e.target.result;
-          experienceImage.style.display = 'block';
-          icon.style.display = 'none';
-        };
-        reader.readAsDataURL(file);
-      }
-    }
-
-    // Function to handle project 1 photo upload
-    function handleProject1Photo(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          const projectImage = document.getElementById('project1Image');
-          const icon = document.getElementById('project1Icon');
-          
-          projectImage.src = e.target.result;
-          projectImage.style.display = 'block';
-          icon.style.display = 'none';
-        };
-        reader.readAsDataURL(file);
-      }
-    }
-
-    // Function to handle project 2 photo upload
-    function handleProject2Photo(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          const projectImage = document.getElementById('project2Image');
-          const icon = document.getElementById('project2Icon');
-          
-          projectImage.src = e.target.result;
-          projectImage.style.display = 'block';
-          icon.style.display = 'none';
-        };
-        reader.readAsDataURL(file);
-      }
-    }
-
-    // Function to handle project 3 photo upload
-    function handleProject3Photo(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          const projectImage = document.getElementById('project3Image');
-          const icon = document.getElementById('project3Icon');
-          
-          projectImage.src = e.target.result;
-          projectImage.style.display = 'block';
-          icon.style.display = 'none';
-        };
-        reader.readAsDataURL(file);
-      }
-    }
-
     function openModal(modalId) {
       document.getElementById(modalId).style.display = 'block';
       document.body.style.overflow = 'hidden';
