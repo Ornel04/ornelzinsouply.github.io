@@ -2,111 +2,700 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV - ZINSOU-PLY ORNEL</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
       color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
     }
-    h1 {
-      font-size: 28px;
+
+    .container {
+      width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    /* Header Section */
+    .header {
+      display: flex;
+      align-items: flex-start;
+      padding: 40px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      height: 420px;
+    }
+
+    .left-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 250px;
+    }
+
+    .photo-container {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #666;
+      flex-shrink: 0;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-container input[type="file"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .photo-container:hover {
+      background: #ccc;
+    }
+
+    .photo-container:hover::after {
+      content: "Cliquez pour changer";
+      position: absolute;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      z-index: 5;
+    }
+
+    .name-section {
+      margin-top: 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .name {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #2c3e50;
       text-transform: uppercase;
-      margin-bottom: 0;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      line-height: 1.2;
     }
-    h2 {
-      border-bottom: 2px solid #555;
-      padding-bottom: 5px;
+
+    .description {
+      flex: 1;
+      margin-left: 50px;
+      margin-top: 220px;
+      width: 600px;
+    }
+
+    .description p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+      background: rgba(255,255,255,0.8);
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #667eea;
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 40px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #2c3e50;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
       margin-top: 40px;
     }
-    p {
-      margin-top: 5px;
+
+    .projects-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      margin-top: 40px;
     }
-    .section {
-      margin-bottom: 30px;
+
+    /* Card Styles */
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      width: 350px;
     }
-    .experience, .projet {
+
+    .project-card {
+      width: 360px;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-image input[type="file"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .card-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 5;
+    }
+
+    .card:hover .card-image::before {
+      opacity: 1;
+    }
+
+    .card-image:hover::after {
+      content: "Cliquez pour changer l'image";
+      position: absolute;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      z-index: 15;
+    }
+
+    .card-content {
+      padding: 25px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .card-date {
+      color: #667eea;
+      font-weight: 600;
+      font-size: 0.9rem;
       margin-bottom: 15px;
     }
-    .date {
-      font-weight: bold;
-      color: #555;
-    }
-    .tech {
-      font-style: italic;
+
+    .card-summary {
       color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      flex: 1;
     }
-    footer {
-      border-top: 1px solid #ccc;
-      padding-top: 20px;
-      margin-top: 40px;
-      font-size: 14px;
+
+    .card-tech {
+      font-style: italic;
+      color: #888;
+      font-size: 0.9rem;
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+      margin-top: auto;
     }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 5% auto;
+      padding: 30px;
+      border-radius: 15px;
+      width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+
+    .close:hover {
+      color: #667eea;
+    }
+
+    .modal h3 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .modal ul {
+      margin-left: 20px;
+    }
+
+    .modal li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      background: #2c3e50;
+      color: white;
+      padding: 30px 40px;
+      text-align: center;
+    }
+
+    .contact-grid {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
     .contact-item {
-      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 1rem;
     }
-    .linkedin-logo {
-      vertical-align: middle;
-      height: 20px;
-      margin-right: 8px;
-    }
+
     .linkedin-link {
+      color: white;
       text-decoration: none;
-      color: #0e76a8;
+      transition: color 0.3s ease;
+    }
+
+    .linkedin-link:hover {
+      color: #e0e0e0;
+    }
+
+    .linkedin-logo {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Scroll bar for small screens */
+    html {
+      overflow-x: auto;
+    }
+
+    body {
+      min-width: 1240px;
+    }
+
+    /* Image upload buttons */
+    .upload-hint {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .photo-container:hover .upload-hint,
+    .card-image:hover .upload-hint {
+      opacity: 1;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="left-section">
+        <div class="photo-container">
+          <input type="file" id="profilePhoto" accept="image/*" onchange="handleProfilePhoto(event)">
+          <span id="photoPlaceholder">Cliquez pour ajouter votre photo</span>
+          <img id="profileImage" style="display: none;" alt="Photo de profil">
+        </div>
+        
+        <div class="name-section">
+          <h1 class="name">ORNEL<br>ZINSOU-PLY</h1>
+        </div>
+      </div>
 
-  <h1>ZINSOU-PLY ORNEL</h1>
-  <p><strong>Étudiant en 2ᵉ année à l’ESEO</strong>, passionné par la conception, l'optimisation et la sécurisation des systèmes informatiques performants. Ambitieux et curieux, je vise à développer des solutions innovantes pour soutenir la transformation numérique des entreprises.</p>
+      <div class="description">
+        <p><strong>Étudiant en 2ᵉ année à l'ESEO</strong>, passionné par la conception, l'optimisation et la sécurisation des systèmes informatiques performants. Ambitieux et curieux, je vise à développer des solutions innovantes pour soutenir la transformation numérique des entreprises.</p>
+      </div>
+    </div>
 
-  <div class="section">
-    <h2>Expérience Professionnelle</h2>
-    <div class="experience">
-      <p><strong>Geophom - FRANCE</strong> <span class="date">(15/07/2024 à 29/11/2024)</span></p>
+    <!-- Experience Section -->
+    <div class="section">
+      <h2 class="section-title">Expérience Professionnelle</h2>
+      <div class="cards-grid">
+        <div class="card" onclick="openModal('experience1')">
+          <div class="card-image">
+            <input type="file" id="experiencePhoto" accept="image/*" onchange="handleExperiencePhoto(event)" onclick="event.stopPropagation()">
+            <span id="experienceIcon">🏢</span>
+            <img id="experienceImage" style="display: none;" alt="Image expérience">
+            <div class="upload-hint">Cliquez pour changer l'image</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Stage en Développement Embarqué</h3>
+            <div class="card-date">Geophom - France (15/07/2024 à 29/11/2024)</div>
+            <p class="card-summary">Développement de systèmes embarqués autonomes pour la capture d'images d'éoliennes et évaluation de leur visibilité.</p>
+            <p class="card-tech">Linux, Raspberry Pi, Shell, SQLite...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="section">
+      <h2 class="section-title">Projets</h2>
+      <div class="projects-grid">
+        <div class="card project-card" onclick="openModal('project1')">
+          <div class="card-image">
+            <input type="file" id="project1Photo" accept="image/*" onchange="handleProject1Photo(event)" onclick="event.stopPropagation()">
+            <span id="project1Icon">⚙️</span>
+            <img id="project1Image" style="display: none;" alt="Image projet 1">
+            <div class="upload-hint">Cliquez pour changer l'image</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Projet InfraLogiciel</h3>
+            <div class="card-date">ESEO, France (2024)</div>
+            <p class="card-summary">Infrastructure virtualisée avec application web PHP et base de données.</p>
+            <p class="card-tech">Git, VirtualBox, Vagrant, Apache2, MariaDB</p>
+          </div>
+        </div>
+
+        <div class="card project-card" onclick="openModal('project2')">
+          <div class="card-image">
+            <input type="file" id="project2Photo" accept="image/*" onchange="handleProject2Photo(event)" onclick="event.stopPropagation()">
+            <span id="project2Icon">☁️</span>
+            <img id="project2Image" style="display: none;" alt="Image projet 2">
+            <div class="upload-hint">Cliquez pour changer l'image</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Projet Cloud Computing</h3>
+            <div class="card-date">ESEO, France (2025)</div>
+            <p class="card-summary">Infrastructure réseau sécurisée et hautement disponible avec PRA.</p>
+            <p class="card-tech">LAMP, OPNsense, Load balancers, Vagrant, Ansible, Zabbix</p>
+          </div>
+        </div>
+
+        <div class="card project-card" onclick="openModal('project3')">
+          <div class="card-image">
+            <input type="file" id="project3Photo" accept="image/*" onchange="handleProject3Photo(event)" onclick="event.stopPropagation()">
+            <span id="project3Icon">🚀</span>
+            <img id="project3Image" style="display: none;" alt="Image projet 3">
+            <div class="upload-hint">Cliquez pour changer l'image</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Projet Personnel</h3>
+            <div class="card-date">En cours</div>
+            <p class="card-summary">Développement d'une application innovante en cours de conception.</p>
+            <p class="card-tech">Technologies modernes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="contact-grid">
+        <div class="contact-item">
+          <strong>📍 Résidence :</strong> France
+        </div>
+        <div class="contact-item">
+          <strong>📧 Email :</strong> ornel.zinsouply@reseau.eseo.fr
+        </div>
+        <div class="contact-item">
+          <strong>📱 Contact :</strong> +33 6 89 75 34 39
+        </div>
+        <div class="contact-item">
+          <a class="linkedin-link" href="https://www.linkedin.com/in/ornel-zinsou-ply/" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo">
+            Ornel ZINSOU-PLY
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div id="experience1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('experience1')">&times;</span>
+      <h3>Stage en Développement Embarqué - Geophom</h3>
+      <p><strong>Période :</strong> 15/07/2024 à 29/11/2024</p>
       <ul>
         <li>Stage en développement de systèmes embarqués autonomes</li>
-        <li>Conception d’un système de prise de vue automatisée basé sur Raspberry Pi, destiné à capturer des images d’éoliennes et à évaluer leur visibilité.</li>
-        <li>Programmation embarquée, traitement d’image et transmission des données.</li>
-        <li>Optimisation des performances système et gestion des composants électroniques.</li>
-        <li class="tech">Technologies : Linux, Raspberry Pi, Shell, DB Browser for SQLite, FileZilla Server.</li>
+        <li>Conception d'un système de prise de vue automatisée basé sur Raspberry Pi, destiné à capturer des images d'éoliennes et à évaluer leur visibilité</li>
+        <li>Programmation embarquée, traitement d'image et transmission des données</li>
+        <li>Optimisation des performances système et gestion des composants électroniques</li>
       </ul>
+      <p><strong>Technologies utilisées :</strong> Linux, Raspberry Pi, Shell, DB Browser for SQLite, FileZilla Server</p>
     </div>
   </div>
 
-  <div class="section">
-    <h2>Projets</h2>
-
-    <div class="projet">
-      <p><strong>Projet InfraLogiciel</strong> – ESEO, France (2024)</p>
+  <div id="project1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project1')">&times;</span>
+      <h3>Projet InfraLogiciel - ESEO</h3>
+      <p><strong>Année :</strong> 2024</p>
       <ul>
-        <li>Déploiement d’une infrastructure virtualisée avec trois machines hébergeant une application web PHP connectée à une base de données, en assurant interconnexion, sécurité et performance.</li>
-        <li class="tech">Technologies : Git, VirtualBox, Vagrant, Apache2, MariaDB.</li>
+        <li>Déploiement d'une infrastructure virtualisée avec trois machines hébergeant une application web PHP connectée à une base de données</li>
+        <li>Assurance de l'interconnexion, sécurité et performance du système</li>
+        <li>Configuration et optimisation des serveurs virtuels</li>
       </ul>
-    </div>
-
-    <div class="projet">
-      <p><strong>Projet Cloud Computing</strong> – ESEO, France (2025)</p>
-      <ul>
-        <li>Conception et déploiement d'une infrastructure réseau et serveur sécurisée et hautement disponible, incluant la configuration des équipements, la mise en place de serveurs web, la gestion de la sécurité, la répartition du trafic, l’automatisation des déploiements, la surveillance des systèmes, ainsi que la mise en œuvre de mécanismes de sauvegarde, de redondance et d’un Plan de Reprise d’Activité (PRA).</li>
-        <li class="tech">Technologies : LAMP, OPNsense, Load balancers, Vagrant, Ansible, Zabbix.</li>
-      </ul>
+      <p><strong>Technologies utilisées :</strong> Git, VirtualBox, Vagrant, Apache2, MariaDB</p>
     </div>
   </div>
 
-  <footer>
-    <div class="contact-item"><strong>Résidence :</strong> France</div>
-    <div class="contact-item"><strong>Email :</strong> ornel.zinsouply@reseau.eseo.fr</div>
-    <div class="contact-item"><strong>Contact :</strong> +33 6 89 75 34 39</div>
-    <div class="contact-item">
-      <a href="https://www.linkedin.com/in/ornel-zinsou-ply/" target="_blank" class="linkedin-link">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-logo">
-        Profil LinkedIn
-      </a>
+  <div id="project2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project2')">&times;</span>
+      <h3>Projet Cloud Computing - ESEO</h3>
+      <p><strong>Année :</strong> 2025</p>
+      <ul>
+        <li>Conception et déploiement d'une infrastructure réseau et serveur sécurisée et hautement disponible</li>
+        <li>Configuration des équipements et mise en place de serveurs web</li>
+        <li>Gestion de la sécurité et répartition du trafic</li>
+        <li>Automatisation des déploiements et surveillance des systèmes</li>
+        <li>Mise en œuvre de mécanismes de sauvegarde, de redondance et d'un Plan de Reprise d'Activité (PRA)</li>
+      </ul>
+      <p><strong>Technologies utilisées :</strong> LAMP, OPNsense, Load balancers, Vagrant, Ansible, Zabbix</p>
     </div>
-  </footer>
+  </div>
 
+  <div id="project3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project3')">&times;</span>
+      <h3>Projet Personnel</h3>
+      <p><strong>Statut :</strong> En cours de développement</p>
+      <ul>
+        <li>Développement d'une application innovante</li>
+        <li>Conception et architecture du système</li>
+        <li>Implémentation des fonctionnalités principales</li>
+      </ul>
+      <p><strong>Technologies :</strong> Technologies modernes en cours de sélection</p>
+    </div>
+  </div>
+
+  <script>
+    // Function to handle profile photo upload
+    function handleProfilePhoto(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const profileImage = document.getElementById('profileImage');
+          const placeholder = document.getElementById('photoPlaceholder');
+          
+          profileImage.src = e.target.result;
+          profileImage.style.display = 'block';
+          placeholder.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Function to handle experience photo upload
+    function handleExperiencePhoto(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const experienceImage = document.getElementById('experienceImage');
+          const icon = document.getElementById('experienceIcon');
+          
+          experienceImage.src = e.target.result;
+          experienceImage.style.display = 'block';
+          icon.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Function to handle project 1 photo upload
+    function handleProject1Photo(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const projectImage = document.getElementById('project1Image');
+          const icon = document.getElementById('project1Icon');
+          
+          projectImage.src = e.target.result;
+          projectImage.style.display = 'block';
+          icon.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Function to handle project 2 photo upload
+    function handleProject2Photo(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const projectImage = document.getElementById('project2Image');
+          const icon = document.getElementById('project2Icon');
+          
+          projectImage.src = e.target.result;
+          projectImage.style.display = 'block';
+          icon.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Function to handle project 3 photo upload
+    function handleProject3Photo(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const projectImage = document.getElementById('project3Image');
+          const icon = document.getElementById('project3Icon');
+          
+          projectImage.src = e.target.result;
+          projectImage.style.display = 'block';
+          icon.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+          if (modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
