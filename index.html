@@ -169,16 +169,33 @@
     }
 
     /* Cards Grid */
-    .cards-grid {
+    /*.cards-grid {
       display: flex;
       justify-content: center;
       gap: 30px;
       margin-top: 40px;
+    }*/
+    .cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 40px;
     }
 
-    .projects-grid {
+    .cards-grid .card {
+    flex: 0 0 23%; /* environ 4 par ligne avec un petit espace */
+   box-sizing: border-box;
+   }
+
+    /*.projects-grid {
       display: flex;
       justify-content: space-between;
+      gap: 25px;
+      margin-top: 40px;
+    }*/
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
       gap: 25px;
       margin-top: 40px;
     }
@@ -198,10 +215,14 @@
       min-height: 480px; /* Hauteur minimum au lieu de fixe */
     }
 
-    .project-card {
+    /*.project-card {
       width: 360px;
-      min-height: 520px; /* Hauteur minimum au lieu de fixe */
-    }
+      min-height: 520px;
+    }*/
+  .project-card {
+   flex: 0 0 23%;
+   box-sizing: border-box;
+  }
 
     .card:hover {
       transform: translateY(-10px);
@@ -511,7 +532,7 @@
 
         <!-- Projet Personnel (en cours) - Le plus récent -->
         <div class="card project-card" onclick="event.stopPropagation()">
-          <div class="card-image" onclick="openModal('project3')" style="cursor: pointer;">
+          <div class="card-image" onclick="openModal('project4')" style="cursor: pointer;">
             <img src="images_site/examotheque.png" alt="Logo de l'entreprise" style="width:100%; height:auto; border-radius: 10px;">
           </div>
           <div class="card-content">
