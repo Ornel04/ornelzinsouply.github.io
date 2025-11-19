@@ -166,6 +166,8 @@
       border-radius: 2px;
     }
 
+    
+
     /* Styles pour les icônes de sections */
     .section-title-with-icon {
       display: flex;
@@ -189,12 +191,31 @@
       margin-top: 40px;
     }
 
+     /*Pour plusieurs projets professionnels décomenter 1 et 2*/
+     .cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 40px;
+    }
+
+     .cards-grid .card {
+    flex: 0 0 23%;
+   box-sizing: border-box;
+   }
+
+    /*.projects-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      margin-top: 40px;
+    }*/
+
     .projects-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 25px;
       margin-top: 40px;
-      justify-content: center;
     }
 
     /* Card Styles */
@@ -526,6 +547,8 @@
             <button class="see-more" onclick="openModal('experience1')">Voir plus</button>
           </div>
         </div>
+
+        
       </div>
     </div>
 
@@ -616,6 +639,8 @@
             <button class="see-more" onclick="openModal('project1')">Voir plus</button>
           </div>
         </div>
+
+
       </div>
     </div>
 
@@ -649,7 +674,7 @@
             <p class="card-tech">Exploitation avec Metasploit, Programmation et Obfuscation (Python et C), Techniques d'Évasion, Gestion Mémoire Windows, Ingénierie Sociale et Camouflage, Analyse de Sécurité</p>
             <button class="see-more" onclick="openModal('project4')">Voir plus</button>
           </div>
-        </div>
+        </div>        
 
       </div>
     </div>
