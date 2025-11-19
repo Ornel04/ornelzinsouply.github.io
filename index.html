@@ -233,6 +233,11 @@
       min-height: 480px;
     }
 
+  /*.project-card { // pour avoir 4 choses sur plusieurs lignes et non 3
+   flex: 0 0 23%;
+   box-sizing: border-box;
+    }*/
+
     .project-card {
       flex: 0 0 calc(33.333% - 17px);
       max-width: 360px;
@@ -547,6 +552,20 @@
             <button class="see-more" onclick="openModal('experience1')">Voir plus</button>
           </div>
         </div>
+
+        <!-- 
+        <div class="card" onclick="event.stopPropagation()">
+          <div class="card-image" onclick="openModal('experience1')" style="cursor: pointer;">
+             <img src="images_site/geophom_logo.jpg" alt="Logo Geophom" style="width:100%; height:auto; border-radius: 10px;">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Stage en développement de systèmes embarqués autonomes</h3>
+            <div class="card-date">Geophom - France (15/07/2024 à 29/11/2024)</div>
+            <p class="card-summary">Conception d'un système de prise de vue automatisée basé sur Raspberry Pi, destiné à capturer des images d'éoliennes et à évaluer leur visibilité. Programmation embarquée avancée avec optimisation des performances système et gestion complète des composants électroniques pour assurer une transmission fiable des données collectées.</p>
+            <p class="card-tech">Linux, Raspberry Pi, Shell, SQLite...</p>
+            <button class="see-more" onclick="openModal('experience1')">Voir plus</button>
+          </div>
+        -->
 
         
       </div>
