@@ -82,7 +82,7 @@ const modalTitles = {
   'project3': 'Backup Gitea',
   'project4': 'Camouflage de m4lware',
   'project5': 'Examothèque',
-  'project6': 'PFE Observabilité'
+  'project6': 'PFE Observabilité',
   'project7': 'Projet Hacker webcam'
 };
 
