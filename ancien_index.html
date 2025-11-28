@@ -39,6 +39,7 @@
       position: relative;
     }
 
+    /* Titre du contrat centré en haut */
     .professional-title {
       text-align: center;
       margin-bottom: 40px;
@@ -72,6 +73,7 @@
       margin: 0;
     }
 
+    /* Contenu principal centré */
     .main-content {
       display: flex;
       align-items: flex-start;
@@ -166,43 +168,24 @@
       border-radius: 2px;
     }
 
-    
-
-    /* Styles pour les icônes de sections */
-    .section-title-with-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      font-size: 2rem;
-      color: #2c3e50;
-      margin-bottom: 40px;
-    }
-
-    .section-icon {
-      font-size: 2.2rem;
-    }
-
     /* Cards Grid */
     .cards-grid {
       display: flex;
       justify-content: center;
       gap: 30px;
       margin-top: 40px;
-    }
-
-     /*Pour plusieurs projets professionnels décomenter 1 et 2*/
-     .cards-grid {
+    }  /*Pour plusieurs projets professionnels décomenter 1 et 2*/
+    /*1   .cards-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
     margin-top: 40px;
     }
 
-     .cards-grid .card {
+    2    .cards-grid .card {
     flex: 0 0 23%;
    box-sizing: border-box;
-   }
+   }*/
 
     /*.projects-grid {
       display: flex;
@@ -210,7 +193,6 @@
       gap: 25px;
       margin-top: 40px;
     }*/
-
     .projects-grid {
       display: flex;
       flex-wrap: wrap;
@@ -230,19 +212,17 @@
       width: 350px;
       display: flex;
       flex-direction: column;
-      min-height: 480px;
+      min-height: 480px; /* Hauteur minimum au lieu de fixe */
     }
 
-  /*.project-card { // pour avoir 4 choses sur plusieurs lignes et non 3
+    /*.project-card {
+      width: 360px;
+      min-height: 520px;
+    }*/
+  .project-card {
    flex: 0 0 23%;
    box-sizing: border-box;
-    }*/
-
-    .project-card {
-      flex: 0 0 calc(33.333% - 17px);
-      max-width: 360px;
-      box-sizing: border-box;
-    }
+  }
 
     .card:hover {
       transform: translateY(-10px);
@@ -310,6 +290,7 @@
       flex: 1;
       text-align: justify;
       font-size: 0.95rem;
+      /* Suppression des limitations de lignes */
     }
 
     .card-tech {
@@ -485,6 +466,7 @@
       height: 20px;
     }
 
+    /* Scroll bar for small screens */
     html {
       overflow-x: auto;
     }
@@ -500,23 +482,29 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-NSETF87J6F');
   </script>
+  <!-- Fin du code Google Analytics -->
+  
 </head>
 <body>
   <div class="container">
     <!-- Header -->
     <div class="header">
+      <!-- Titre du contrat centré -->
       <div class="professional-title">
         <h2>Stage de fin d'étude</h2>
         <h2>Cloud, Système et Sécurité (CSS)</h2>
         <p>Février 2026 - Juillet 2026 (06 mois)</p>
       </div>
 
+      <!-- Contenu principal centré -->
       <div class="main-content">
         <div class="left-section">
           <div class="photo-container">
             <img src="images_site/profil.jpeg" alt="Photo de profil">
+            <!-- Remplacez par: <img src="votre-photo.jpg" alt="Photo de profil"> -->
           </div>
          
           <div class="name-section">
@@ -532,17 +520,11 @@
 
     <!-- Experience Section -->
     <div class="section">
-      <div class="section-title-with-icon">
-        
-        <h2 style="margin: 0; position: relative;">
-          Expérience Professionnelle
-          <span style="content: ''; width: 60px; height: 4px; background: linear-gradient(135deg, #667eea, #764ba2); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 2px; display: block;"></span>
-        </h2>
-      </div>
+      <h2 class="section-title">Expérience Professionnelle</h2>
       <div class="cards-grid">
         <div class="card" onclick="event.stopPropagation()">
           <div class="card-image" onclick="openModal('experience1')" style="cursor: pointer;">
-             <img src="images_site/geophom_logo.jpg" alt="Logo Geophom" style="width:100%; height:auto; border-radius: 10px;">
+             <img src="images_site/geophom_logo.jpg" alt="Logo de l'entreprise" style="width:100%; height:auto; border-radius: 10px;">
           </div>
           <div class="card-content">
             <h3 class="card-title">Stage en développement de systèmes embarqués autonomes</h3>
@@ -552,75 +534,76 @@
             <button class="see-more" onclick="openModal('experience1')">Voir plus</button>
           </div>
         </div>
-
-        <!-- 
-        <div class="card" onclick="event.stopPropagation()">
-          <div class="card-image" onclick="openModal('experience1')" style="cursor: pointer;">
-             <img src="images_site/geophom_logo.jpg" alt="Logo Geophom" style="width:100%; height:auto; border-radius: 10px;">
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">Stage en développement de systèmes embarqués autonomes</h3>
-            <div class="card-date">Geophom - France (15/07/2024 à 29/11/2024)</div>
-            <p class="card-summary">Conception d'un système de prise de vue automatisée basé sur Raspberry Pi, destiné à capturer des images d'éoliennes et à évaluer leur visibilité. Programmation embarquée avancée avec optimisation des performances système et gestion complète des composants électroniques pour assurer une transmission fiable des données collectées.</p>
-            <p class="card-tech">Linux, Raspberry Pi, Shell, SQLite...</p>
-            <button class="see-more" onclick="openModal('experience1')">Voir plus</button>
-          </div>
-        -->
-
-        
       </div>
     </div>
 
-    <!-- Projects Cloud/Infra Section -->
+    <!-- Projects Section -->
     <div class="section">
-      <div class="section-title-with-icon">
-
-        <h2 style="margin: 0; position: relative;">
-          Projets Cloud / Infra
-          <span style="content: ''; width: 60px; height: 4px; background: linear-gradient(135deg, #667eea, #764ba2); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 2px; display: block;"></span>
-        </h2>
-      </div>
+      <h2 class="section-title">Projets</h2>
       <div class="projects-grid">
 
-        <!-- PFE: Observabilité -->
+        
+        <!-- Projet de fin d'étude PFE (en cours) -->
         <div class="card project-card" onclick="event.stopPropagation()">
           <div class="card-image" onclick="openModal('project6')" style="cursor: pointer;">
-            <img src="images_site/observabilite.png" alt="Observabilité" style="width:100%; height:auto; border-radius: 10px;">
+            <img src="images_site/observabilite.png" alt="Logo de l'entreprise" style="width:100%; height:auto; border-radius: 10px;">
           </div>
           <div class="card-content">
-            <h3 class="card-title">PFE: Observabilité et Infrastructure</h3>
+            <h3 class="card-title">PFE: Observabilité et Infrastruture</h3>
             <div class="card-date">ESEO, France (2025) en cours...</div>
             <p class="card-summary">
-                Le projet vise à concevoir un Centre d'Observabilité du Système d'Information utilisant Prometheus, Loki et Grafana pour centraliser, analyser et visualiser les données du SI en temps réel. L'objectif est d'anticiper les pannes, de prédire les dysfonctionnements et de réduire l'impact énergétique du système.
+                Le projet vise à concevoir un Centre d’Observabilité du Système d’Information utilisant Prometheus, Loki et Grafana pour centraliser, analyser et visualiser les données du SI en temps réel. L’objectif est d’anticiper les pannes, de prédire les dysfonctionnements et de réduire l’impact énergétique du système.
             </p>
             <p class="card-tech">Gestion de projet, Docker, Grafana, Prometheus, Loki, Microsoft Azure, Gitea</p>
             <button class="see-more" onclick="openModal('project6')">Voir plus</button>
           </div>
         </div>
 
-        <!-- Examothèque -->
+        
+        <!-- Projet Personnel (en cours) -->
         <div class="card project-card" onclick="event.stopPropagation()">
           <div class="card-image" onclick="openModal('project5')" style="cursor: pointer;">
-            <img src="images_site/examotheque.png" alt="Examothèque" style="width:100%; height:auto; border-radius: 10px;">
+            <img src="images_site/examotheque.png" alt="Logo de l'entreprise" style="width:100%; height:auto; border-radius: 10px;">
           </div>
           <div class="card-content">
-            <h3 class="card-title">Projet Examothèque</h3>
+            <h3 class="card-title">Projet Examotheque</h3>
             <div class="card-date">France (2025) en cours...</div>
             <p class="card-summary">
                 Le projet vise à créer une application web, <strong>Examothèque</strong>, hébergée sur Internet.<br>
-                Examothèque est une plateforme collaborative centralisant une banque d'épreuves (examens, devoirs, etc.) au format PDF, provenant de différents établissements.<br>
-                Elle permet à tout utilisateur: élèves, enseignants ou encadrants d'accéder facilement aux épreuves des années précédentes.<br>
-                <br>Application web: <a href="https://examotheque.free.nf/" target="_blank">examotheque.free.nf</a>
+                Examothèque est une plateforme collaborative centralisant une banque d’épreuves (examens, devoirs, etc.) au format PDF, provenant de différents établissements.<br>
+                Elle permet à tout utilisateur: élèves, enseignants ou encadrants d’accéder facilement aux épreuves des années précédentes.<br>
+                <br>Application_web: <a href="https://examotheque.free.nf/" target="_blank">examotheque.free.nf</a>
             </p>
-            <p class="card-tech">HTML, CSS, PHP, MariaDB, Docker, Grafana, Prometheus, Jenkins, ClickUp, InfinityFree, FileZilla, Gitea</p>
+            <p class="card-tech">Gestion de projet, Design d’expérience utilisateur (UX), Design d’interface utilisateur (UI), HTML, CSS / Sprites CSS, PHP, PhpMyAdmin, MariaDB / Bases de données, Hébergement web, Déploiement de systèmes, Déploiement logiciel, Réalisation de tests, Docker, Grafana, Prometheus, Jenkins, ClickUp, InfinityFree, FileZilla, Gitea, UptimeRobot</p>
             <button class="see-more" onclick="openModal('project5')">Voir plus</button>
           </div>
         </div>
 
-        <!-- Backup Gitea -->
+        <!-- Projet Personnel (en cours) -->
+        <div class="card project-card" onclick="event.stopPropagation()">
+          <div class="card-image" onclick="openModal('project4')" style="cursor: pointer;">
+            <img src="images_site/malware_windows.jpg" alt="Logo de l'entreprise" style="width:100%; height:auto; border-radius: 10px;">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Projet Camouflage de m4lware</h3>
+            <div class="card-date">France (2025)</div>
+            <p class="card-summary">
+                 Ce projet démontre les techniques de création et d'obfuscation de payloads malveillants dans un environnement de laboratoire contrôlé. 
+                 L'objectif est de comprendre les mécanismes d'attaque par reverse shell et les méthodes de dissimulation de code malveillant pour 
+                 sensibiliser aux enjeux de cybersécurité.
+                 <li>Environnement : 
+                  <br>*deux postes attaquants(Kali, génération du payload et récupération de PuTTY - Windows, empaquetage avec IExpress)
+                  <br>*une machine cible
+            </p>
+            <p class="card-tech">Exploitation avec Metasploit, Programmation et Obfuscation (Python et C), Techniques d'Évasion, Gestion Mémoire Windows, Ingénierie Sociale et Camouflage, Analyse de Sécurité</p>
+            <button class="see-more" onclick="openModal('project4')">Voir plus</button>
+          </div>
+        </div>        
+
+        <!-- Projet Backup and Restore de Gitea (2025)-->
         <div class="card project-card" onclick="event.stopPropagation()">
           <div class="card-image" onclick="openModal('project3')" style="cursor: pointer;">
-            <img src="images_site/Restore_Gitea.png" alt="Backup Gitea" style="width:100%; height:auto; border-radius: 10px;">
+            <img src="images_site/Restore_Gitea.png" alt="Logo de l'entreprise" style="width:100%; height:auto; border-radius: 10px;">
           </div>
           <div class="card-content">
             <h3 class="card-title">Projet Backup and Restore de Gitea</h3>
@@ -631,10 +614,10 @@
           </div>
         </div>
 
-        <!-- Cloud Computing -->
+        <!-- Projet Cloud Computing (2025) -->
         <div class="card project-card" onclick="event.stopPropagation()">
           <div class="card-image" onclick="openModal('project2')" style="cursor: pointer;">
-             <img src="images_site/CloudComputing.jpg" alt="Cloud Computing" style="width:100%; height:auto; border-radius: 10px;">
+             <img src="images_site/CloudComputing.jpg" alt="Logo de l'entreprise" style="width:100%; height:auto; border-radius: 10px;">
           </div>
           <div class="card-content">
             <h3 class="card-title">Projet Cloud Computing</h3>
@@ -645,10 +628,10 @@
           </div>
         </div>
 
-        <!-- InfraLogiciel -->
+        <!-- Projet InfraLogiciel (2024) - Le plus ancien -->
         <div class="card project-card" onclick="event.stopPropagation()">
           <div class="card-image" onclick="openModal('project1')" style="cursor: pointer;">
-             <img src="images_site/InfraLog.png" alt="InfraLogiciel" style="width:100%; height:auto; border-radius: 10px;">
+             <img src="images_site/InfraLog.png" alt="Logo de l'entreprise" style="width:100%; height:auto; border-radius: 10px;">
           </div>
           <div class="card-content">
             <h3 class="card-title">Projet InfraLogiciel</h3>
@@ -658,65 +641,6 @@
             <button class="see-more" onclick="openModal('project1')">Voir plus</button>
           </div>
         </div>
-
-
-      </div>
-    </div>
-
-    <!-- Projects Security Section -->
-    <div class="section">
-      <div class="section-title-with-icon">
-     
-        <h2 style="margin: 0; position: relative;">
-          Projets Sécurité
-          <span style="content: ''; width: 60px; height: 4px; background: linear-gradient(135deg, #667eea, #764ba2); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 2px; display: block;"></span>
-        </h2>
-      </div>
-      <div class="projects-grid">
-
-        <!-- Camouflage de m4lware -->
-        <div class="card project-card" onclick="event.stopPropagation()">
-          <div class="card-image" onclick="openModal('project4')" style="cursor: pointer;">
-            <img src="images_site/malware_windows.jpg" alt="Malware" style="width:100%; height:auto; border-radius: 10px;">
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">Projet Camouflage de m4lware</h3>
-            <div class="card-date">ESEO, France (2025)</div>
-            <p class="card-summary">
-                 Ce projet montre comment un fichier piégé peut être créé (payload) et rendu difficile à détecter (obfuscation).
-                 L’objectif est de comprendre comment un pirate peut ouvrir un accès à distance sur un ordinateur (reverse shell) et comment il cache ce type de fichier malveillant, c’est-à-dire les mécanismes d’attaque par reverse shell et les méthodes de dissimulation de code.
-                 Cela aide à mieux comprendre les risques et l’importance de la cybersécurité au quotidien.
-                 <li>Environnement : 
-                  <br>*Kali, génération du payload et récupération de PuTTY (machine attaquante)
-                  <br>*Windows XP, empaquetage avec IExpress (machine attaquante)
-                  <br>*Windows XP (machine cible)
-            </p>
-            <p class="card-tech">Exploitation avec Metasploit, Programmation et Obfuscation (Python et C), Techniques d'Évasion, Gestion Mémoire Windows, Ingénierie Sociale et Camouflage, Analyse de Sécurité</p>
-            <button class="see-more" onclick="openModal('project4')">Voir plus</button>
-          </div>
-        </div>
-
-        <!-- Hacker webcam, microphone ...d'un windows XP -->
-        <div class="card project-card" onclick="event.stopPropagation()">
-          <div class="card-image" onclick="openModal('project7')" style="cursor: pointer;">
-            <img src="images_site/hacker_windows.jpg" alt="Hacker" style="width:100%; height:auto; border-radius: 10px;">
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">Projet Hacker webcam / microphone... d'un windows</h3>
-            <div class="card-date">France (2025)</div>
-            <p class="card-summary">
-                Le projet montre les dangers d’utiliser des systèmes anciens comme Windows XP, ainsi que la facilité avec laquelle une personne peut être trompée par une simple manipulation.
-                Il rappelle aussi l’importance de garder ses appareils à jour et protégés. Ce test de pénétration explique ensuite comment un ordinateur Windows vulnérable peut être piraté avec Metasploit : 
-                création d’un fichier piégé (payload malveillant), mise à disposition via un petit serveur web (serveur HTTP), puis prise de contrôle complète de la machine, y compris de la webcam ou même du microphone.
-                 <li>Environnement : 
-                  <br>*Kali Linux 2025.3 (machine attaquante)
-                  <br>*Windows 10 (machine cible)
-            </p>
-            <p class="card-tech">Exploitation et Framework d’attaque, Génération et Obfuscation de Payloads, Programmation & Ingénierie de fichiers malveillants, Évasion et contournement de la sécurité</p>
-            <button class="see-more" onclick="openModal('project7')">Voir plus</button>
-          </div>
-        </div>
-
       </div>
     </div>
 
@@ -751,7 +675,7 @@
     </div>
   </div>
 
-<!-- Modals -->
+  <!-- Modals -->
   <div id="experience1" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('experience1')">&times;</span>
@@ -903,28 +827,6 @@
     </div>
   </div>
 
-  <div id="project7" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('project7')">&times;</span>
-      <h3>Projet Hacker webcam / microphone... d'un windows</h3>
-      <p><strong>Année :</strong> 2025</p>
-      <ul>
-        <li>Identifier les vulnérabilités d'un système Windows obsolète via reconnaissance réseau.</li>
-        <li>Créer et déployer un payload malveillant (window.exe) avec MSFVenom, puis le distribuer via serveur HTTP.</li>
-        <li>Exploiter la vulnérabilité en établissant une session Meterpreter après exécution du fichier malveillant.</li>
-        <li>Compromettre les périphériques sensibles en accédant à la webcam de la cible en temps réel.</li>
-        <li>Documenter et recommander l'ensemble de l'attaque avec rapport technique et mesures de protection adaptées.</li>
-      </ul>
-      <p><strong>Technologies :</strong> Kali, Windows, Payloads & Techniques d’exploitation, Metasploit Framework, IExpress, VirusTotal</p>
-      <a href="https://github.com/Ornel04/Hacker_webcam-microphone" class="github-link" target="_blank" rel="noopener noreferrer">
-        <svg class="github-icon" viewBox="0 0 24 24">
-          <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-        </svg>
-        Projet disponible sur GitHub
-      </a>
-    </div>
-  </div>
-
   <script>
     function openModal(modalId) {
       document.getElementById(modalId).style.display = 'block';
@@ -960,6 +862,5 @@
       }
     });
   </script>
-<script src="discord-tracker.js"></script>  
 </body>
 </html>
