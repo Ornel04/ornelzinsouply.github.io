@@ -1,0 +1,36 @@
+---
+- name: Déployer conteneurs depuis Git
+  hosts: serveurs
+  become: true
+
+  tasks:
+
+    - name: Installer Git si absent
+      ansible.builtin.package:
+        name: git
+        state: present
+
+    - name: Installer Docker si absent
+      ansible.builtin.package:
+        name: docker.io
+        state: present
+
+    - name: S'assurer que Docker est démarré
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Cloner le dépôt Git contenant les scripts
+      ansible.builtin.git:
+        repo: 'https://github.com/TON_COMPTE/TON_REPO.git'
+        dest: /tmp/mon-projet
+        force: yes
+
+    - name: Donner les droits d'exécution au script
+      ansible.builtin.file:
+        path: /tmp/mon-projet/deploy_debian.sh
+        mode: '0755'
+
+    - name: Lancer le script de déploiement
+      ansible.builtin.shell: /tmp/mon-projet/deploy_debian.sh
