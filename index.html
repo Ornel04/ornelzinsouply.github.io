@@ -510,7 +510,7 @@
       <div class="professional-title">
         <h2>Stage de fin d'étude</h2>
         <h2>Cloud, Système et Sécurité (CSS)</h2>
-        <p>Février 2026 - Juillet 2026 (06 mois)</p>
+        <p>Mars 2026 - Août 2026 (06 mois)</p>
       </div>
 
       <div class="main-content">
@@ -589,11 +589,11 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">PFE: Observabilité et Infrastructure</h3>
-            <div class="card-date">ESEO, France (2025) en cours...</div>
+            <div class="card-date">ESEO, France (2025)</div>
             <p class="card-summary">
                 Le projet vise à concevoir un Centre d'Observabilité du Système d'Information utilisant Prometheus, Loki et Grafana pour centraliser, analyser et visualiser les données du SI en temps réel. L'objectif est d'anticiper les pannes, de prédire les dysfonctionnements et de réduire l'impact énergétique du système.
             </p>
-            <p class="card-tech">Gestion de projet, Docker, Grafana, Prometheus, Loki, Microsoft Azure, Gitea</p>
+            <p class="card-tech">Gestion de projet, Docker, Grafana, Prometheus, Loki, Microsoft Azure, Gitea, Power BI</p>
             <button class="see-more" onclick="openModal('project6')">Voir plus</button>
           </div>
         </div>
@@ -659,6 +659,60 @@
           </div>
         </div>
 
+
+      </div>
+    </div>
+
+
+    <!-- CI/CD – DevOps & DevSecOps -->
+    <div class="section">
+      <div class="section-title-with-icon">
+     
+        <h2 style="margin: 0; position: relative;">
+          CI/CD – DevOps & DevSecOps
+          <span style="content: ''; width: 60px; height: 4px; background: linear-gradient(135deg, #667eea, #764ba2); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 2px; display: block;"></span>
+        </h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Projet CI/CD sécurisé – GitLab (POC) -->
+        <div class="card project-card" onclick="event.stopPropagation()">
+          <div class="card-image" onclick="openModal('project8')" style="cursor: pointer;">
+            <img src="images_site/gitlabcicd.png" alt="GitLab" style="width:100%; height:auto; border-radius: 10px;">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Projet CI/CD sécurisé – GitLab (POC)</h3>
+            <div class="card-date">ESEO, France (2026)</div>
+            <p class="card-summary">
+                 Dans le cadre d'un projet académique en binôme, j'ai conçu et déployé un pipeline CI/CD complet pour automatiser et sécuriser la livraison d'applications. 
+                 L'objectif était de démontrer concrètement les bénéfices de l'approche DevOps sur une application réelle (string-calculator).
+                 Le pipeline automatise six étapes clés :
+                  <br> Build → Test → Audit → Delivery → Release → Deploy. 
+                  <br>Chaque commit déclenche automatiquement la containerisation Docker, les tests unitaires, les audits de sécurité (Trivy, SonarQube), le versionnement intelligent, et le déploiement via Ansible sur l'environnement cible.
+            </p>
+            <p class="card-tech">GitLab CI/CD, Docker, Kaniko, Jest, Trivy, SonarQube, Ansible, Linux, Git</p>
+            <button class="see-more" onclick="openModal('project8')">Voir plus</button>
+          </div>
+        </div>
+
+        <!-- OpenStack / Orchestration & Infrastructure as Code -->
+        <div class="card project-card" onclick="event.stopPropagation()">
+          <div class="card-image" onclick="openModal('project9')" style="cursor: pointer;">
+            <img src="images_site/openstack.png" alt="Hacker" style="width:100%; height:auto; border-radius: 10px;">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">OpenStack / Orchestration & Infrastructure as Code</h3>
+            <div class="card-date">ESEO, France (2026)</div>
+            <p class="card-summary">
+                Dans le cadre d'un projet académique en binôme, j'ai orchestré le déploiement automatisé d'une infrastructure Cloud OpenStack complète.
+                <br>Déploiement automatisé : Utilisation de Kolla-Ansible pour conteneuriser et déployer les services OpenStack (Nova, Glance, Neutron, Manila). Configuration multinode avec Docker, MariaDB et HAProxy.
+                <br>Évolution dynamique : Ajout de compute nodes et extension des services via playbooks Ansible. Gestion complète du cycle : inventaire, déploiement ciblé et validation.
+                <br>Stacks réutilisables : Création de templates IaC pour instances avec volumes persistants, IP flottantes, architecture bastion sécurisée, et déploiement scalable multi-instances.
+            </p>
+            <p class="card-tech">Docker, Ansible, Kolla/Kolla-Ansible, OpenStack (Nova, Glance, Neutron, Manila), MariaDB, HAProxy, SSH, YAML, User-data.</p>
+            <button class="see-more" onclick="openModal('project9')">Voir plus</button>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -739,7 +793,7 @@
           <strong>🚗 Permis :</strong> B
         </div>
         <div class="contact-item">
-          <strong>🌍 Langues :</strong> Français et Anglais (B1)
+          <strong>🌍 Langues :</strong> Français et Anglais B1 technique (lecture & documentation)
         </div>
         <div class="contact-item">
           <a class="linkedin-link" href="https://www.linkedin.com/in/ornel-zinsou-ply/" target="_blank" rel="noopener noreferrer">
@@ -891,9 +945,9 @@
         <li>Centraliser les métriques et les logs provenant de plusieurs serveurs grâce à Prometheus et Loki.</li>
         <li>Visualiser et analyser les données collectées via Grafana à travers des tableaux de bord techniques et fonctionnels.</li>
         <li>Anticiper les pannes et détecter les anomalies avant qu’elles n’affectent les utilisateurs.</li>
-        <li>Prédire les dysfonctionnements futurs grâce à l’analyse des données historiques.</li>
+        <li>Prédire les dysfonctionnements futurs grâce à l’analyse des données historiques avec Power BI.</li>
       </ul>
-      <p><strong>Technologies :</strong> Docker, Grafana, Prometheus, Loki, Microsoft Azure, Gitea </p>
+      <p><strong>Technologies :</strong> Docker, Grafana, Prometheus, Loki, Microsoft Azure, Gitea, Power BI </p>
       <a href="https://github.com/Ornel04/PFE" class="github-link" target="_blank" rel="noopener noreferrer">
         <svg class="github-icon" viewBox="0 0 24 24">
           <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
@@ -924,6 +978,49 @@
       </a>
     </div>
   </div>
+
+  <div id="project8" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project8')">&times;</span>
+      <h3>Projet CI/CD sécurisé – GitLab (POC)</h3>
+      <p><strong>Année :</strong> 2026</p>
+      <ul>
+        <li>Conception d’un pipeline CI/CD complet (build, test, audit, delivery, release, deploy).</li>
+        <li>Automatisation des tests unitaires avec génération de rapports.</li>
+        <li>Mise en place d’audits de sécurité et de qualité en continu.</li>
+        <li>Gestion du versioning et des releases selon les branches Git.</li>
+        <li>Déploiement automatisé et sécurisé sur machine cible via Ansible.</li>
+        <li>Documentation technique et présentation de la solution.</li>
+      </ul>
+      <p><strong>Technologies :</strong> GitLab CI/CD, Docker, Kaniko, Jest, Trivy, SonarQube, Ansible, Linux, Git</p>
+      <a href="https://github.com/Ornel04/Hacker_webcam-microphone" class="github-link" target="_blank" rel="noopener noreferrer">
+        <svg class="github-icon" viewBox="0 0 24 24">
+          <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+        </svg>
+        Projet disponible sur GitHub
+      </a>
+    </div>
+  </div> 
+  
+<div id="project9" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project9')">&times;</span>
+      <h3>OpenStack / Orchestration & Infrastructure as Code</h3>
+      <p><strong>Année :</strong> 2026</p>
+      <ul>
+        <li>Déploiement d’une infrastructure OpenStack via Kolla/Kolla-Ansible (services conteneurisés Nova, Glance, Neutron).</li>
+        <li>Extension de l’infrastructure : ajout de compute nodes et services partagés (Manila).</li>
+        <li>Conception et paramétrage de stacks pour instances : volumes persistants, IP flottantes, groupes de sécurité, bastion et scaling horizontal.</li>
+        <li>Documentation complète des procédures et configurations pour réutilisation et adaptation multi-environnements.</li>
+      </ul>
+      <p><strong>Technologies :</strong> OpenStack, Kolla/Kolla-Ansible, Docker, Ansible, MariaDB, HAProxy, YAML, SSH</p>
+      <a href="https://github.com/Ornel04/Hacker_webcam-microphone" class="github-link" target="_blank" rel="noopener noreferrer">
+        <svg class="github-icon" viewBox="0 0 24 24">
+          <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+        </svg>
+        Projet disponible sur GitHub
+      </a>
+    </div>
 
   <script>
     function openModal(modalId) {

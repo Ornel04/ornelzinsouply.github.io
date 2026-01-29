@@ -83,7 +83,9 @@ const modalTitles = {
   'project4': 'Camouflage de m4lware',
   'project5': 'Examothèque',
   'project6': 'PFE Observabilité',
-  'project7': 'Projet Hacker webcam'
+  'project7': 'Projet Hacker webcam',
+  'project8': 'Projet CI/CD sécurisé – GitLab (POC)',
+  'project9': 'OpenStack / Orchestration & Infrastructure as Code'
 };
 
 // ============================================
