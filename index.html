@@ -206,7 +206,7 @@
 
     /*.projects-grid {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
       gap: 25px;
       margin-top: 40px;
     }*/
@@ -216,6 +216,7 @@
       flex-wrap: wrap;
       gap: 25px;
       margin-top: 40px;
+      justify-content: center;
     }
 
     /* Card Styles */
@@ -233,16 +234,18 @@
       min-height: 480px;
     }
 
-  /*.project-card { // pour avoir 4 choses sur plusieurs lignes et non 3
-   flex: 0 0 23%;
-   box-sizing: border-box;
-    }*/
-
-    .project-card {
+    /*.project-card {
       flex: 0 0 calc(33.333% - 17px);
       max-width: 360px;
       box-sizing: border-box;
-    }
+    }*/
+
+    .project-card {
+      flex: 0 0 calc(25% - 19px);
+      width: calc(25% - 19px);
+      box-sizing: border-box;
+      min-height: 480px; /* même hauteur que .card */
+     }
 
     .card:hover {
       transform: translateY(-10px);
