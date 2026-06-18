@@ -538,52 +538,80 @@
       <div class="section-title-with-icon">
         
         <h2 style="margin: 0; position: relative;">
-          Expérience Professionnelle
+          Expériences Professionnelles
           <span style="content: ''; width: 60px; height: 4px; background: linear-gradient(135deg, #667eea, #764ba2); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 2px; display: block;"></span>
         </h2>
       </div>
       <div class="cards-grid">
 
-          <div class="card" onclick="event.stopPropagation()">
-          <div class="card-image" onclick="openModal('experience2')" style="cursor: pointer;">
+          <!--
+           <div class="card" onclick="event.stopPropagation()">
+          <div class="card-image" onclick="openModal('experience5')" style="cursor: pointer;">
              <img src="images_site/TBC_logo.jpg" alt="Logo TBC" style="width:100%; height:auto; border-radius: 10px;">
           </div>
           <div class="card-content">
-            <h3 class="card-title">Ingénieur DevOps & Production </h3>
+            <h3 class="card-title">Ingénieur DevSecOps & Production </h3>
             <div class="card-date">Technology and Business Consulting - France (06/04/2026 à 25/09/2026)</div>
             <p class="card-summary">Stage axé sur la sécurisation et l'automatisation d'infrastructures Linux (Ubuntu, RHEL) en environnement client EDF. Mise en conformité des OS via Rudder et OpenSCAP, automatisation du patching et des déploiements via Ansible/AWX, gestion des secrets avec Vault, et orchestration de conteneurs sous Kubernetes/OpenShift. Introduction au GitOps avec ArgoCD.</p>
+            <p class="card-tech">AWX, Rudder, OpenShift, ArgoCD, GitLab, Ansible, HashiCorp Vault...</p>
+            <button class="see-more" onclick="openModal('experience5')">Voir plus</button>
+          </div>
+        </div> 
+      -->
+
+          <div class="card" onclick="event.stopPropagation()">
+          <div class="card-image" onclick="openModal('experience4')" style="cursor: pointer;">
+             <img src="images_site/TBC_logo.png" alt="Logo TBC" style="width:100%; height:auto; border-radius: 10px;">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Ingénieur DevSecOps & Production</h3>
+            <div class="card-date">Technology and Business Consulting - France (06/04/2026 à 25/09/2026)</div>
+            <p class="card-summary">Stage axé sur la sécurisation et l'automatisation d'infrastructures Linux (Ubuntu, RHEL) en environnement client EDF. Mise en conformité des OS via Rudder et OpenSCAP, automatisation du patching et des déploiements via Ansible/AWX, gestion des secrets avec Vault, et orchestration de conteneurs sous Kubernetes/OpenShift. Introduction au GitOps avec ArgoCD.</p>
+            <p class="card-tech">AWX, Rudder, OpenShift, ArgoCD, GitLab, Ansible, HashiCorp Vault...</p>
+            <button class="see-more" onclick="openModal('experience4')">Voir plus</button>
+          </div>
+        </div>  
+        
+          
+         <div class="card" onclick="event.stopPropagation()">
+          <div class="card-image" onclick="openModal('experience3')" style="cursor: pointer;">
+             <img src="images_site/MSD_logo.png" alt="MSD logo" style="width:100%; height:auto; border-radius: 10px;">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Ingénieur DevOps Cloud</h3>
+            <div class="card-date">MSD Consulting - France (01/09/2025 à 02/02/2026)</div>
+            <p class="card-summary">Application web full-stack permettant de gérer l'ensemble des opérations d'une quincaillerie : ventes, stocks, caisse, produits, partenaires et analyses, à travers une interface moderne et intuitive.</p>
             <p class="card-tech">OpenShift, ArgoCD, GitLab, Ansible, HashiCorp Vault...</p>
+            <button class="see-more" onclick="openModal('experience3')">Voir plus</button>
+          </div>
+        </div>             
+        
+
+        <div class="card" onclick="event.stopPropagation()">
+          <div class="card-image" onclick="openModal('experience2')" style="cursor: pointer;">
+             <img src="images_site/TBC_logo.png" alt="Logo TBC" style="width:100%; height:auto; border-radius: 10px;">
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Ingénieur SysOps</h3>
+            <div class="card-date">Technology and Business Consulting - France (03/03/2025 à 05/09/2025)</div>
+            <p class="card-summary">Mise en place d'une infrastructure réseau sécurisée et hautement disponible avec Plan de Reprise d'Activité (PRA), déployée sur un modèle similaire à une solution IaaS complète. Le projet comprend la configuration d'équipements réseau avancés, l'implémentation de serveurs web redondants, la gestion intelligente du trafic, l'automatisation complète des déploiements et la surveillance proactive des systèmes pour garantir une disponibilité maximale.</p>
+            <p class="card-tech">LAMP, OPNsense, Load balancers, Vagrant, Ansible, Zabbix...</p>
             <button class="see-more" onclick="openModal('experience2')">Voir plus</button>
           </div>
-        </div>            
-        
+        </div>                       
         
         <div class="card" onclick="event.stopPropagation()">
           <div class="card-image" onclick="openModal('experience1')" style="cursor: pointer;">
-             <img src="images_site/geophom_logo.jpg" alt="Logo Geophom" style="width:100%; height:auto; border-radius: 10px;">
+             <img src="images_site/geophom_logo.png" alt="Logo Geophom" style="width:100%; height:auto; border-radius: 10px;">
           </div>
           <div class="card-content">
-            <h3 class="card-title">Stage en développement de systèmes embarqués autonomes</h3>
+            <h3 class="card-title">Ingénieur développement Systèmes Embarqués autonomes</h3>
             <div class="card-date">Geophom - France (15/07/2024 à 29/11/2024)</div>
             <p class="card-summary">Conception d'un système de prise de vue automatisée basé sur Raspberry Pi, destiné à capturer des images d'éoliennes et à évaluer leur visibilité. Programmation embarquée avancée avec optimisation des performances système et gestion complète des composants électroniques pour assurer une transmission fiable des données collectées.</p>
             <p class="card-tech">Linux, Raspberry Pi, Shell, SQLite...</p>
             <button class="see-more" onclick="openModal('experience1')">Voir plus</button>
           </div>
         </div>
-
-        <!--
-        <div class="card" onclick="event.stopPropagation()">
-          <div class="card-image" onclick="openModal('experience2')" style="cursor: pointer;">
-             <img src="images_site/TBC_logo.jpg" alt="Logo TBC" style="width:100%; height:auto; border-radius: 10px;">
-          </div>
-          <div class="card-content">
-            <h3 class="card-title">Ingénieur DevOps & Production </h3>
-            <div class="card-date">Technology and Business Consulting - France (06/04/2026 à 25/09/2026)</div>
-            <p class="card-summary">Conception d'un système de prise de vue automatisée basé sur Raspberry Pi, destiné à capturer des images d'éoliennes et à évaluer leur visibilité. Programmation embarquée avancée avec optimisation des performances système et gestion complète des composants électroniques pour assurer une transmission fiable des données collectées.</p>
-            <p class="card-tech">Linux, Raspberry Pi, Shell, SQLite...</p>
-            <button class="see-more" onclick="openModal('experience1')">Voir plus</button>
-          </div>
-        -- >
 
         
       </div>
@@ -824,10 +852,11 @@
   </div>
 
 <!-- Modals -->
-  <div id="experience2" class="modal">
+
+  <div id="experience4" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('experience2')">&times;</span>
-      <h3>Ingénieur DevOps & Production</h3>
+      <span class="close" onclick="closeModal('experience4')">&times;</span>
+      <h3>Ingénieur DevOps & Production - TBC Consulting </h3>
       <p><strong>Période :</strong> 06/04/2026 à 25/09/2026</p>
       <ul>
         <li>Industrialisation des déploiements Cloud Native : conception et gestion de clusters Kubernetes /OpenShift via ArgoCD (GitOps / GitLab), réduisant le temps de provisionnement des environnements.</li>
@@ -837,8 +866,52 @@
         <li>Architecture pilote : conception d'une infrastructure de déploiement automatisé servant de référence d'architecture pour les équipes de développement.</li>
 
       </ul>
+      <p><strong>Technologies utilisées :</strong> AWX, Rudder, OpenShift, ArgoCD, GitLab, Ansible, HashiCorp Vault</p>
+      <a href="https://github.com/Ornel04/DevOps_Production" class="github-link" target="_blank" rel="noopener noreferrer">
+        <svg class="github-icon" viewBox="0 0 24 24">
+          <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+        </svg>
+        Projet disponible sur GitHub
+      </a>
+    </div>
+  </div>
+      
+  <div id="experience3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('experience3')">&times;</span>
+      <h3>Ingénieur DevOps Cloud - MSD Consulting</h3>
+      <p><strong>Période :</strong> 01/09/2025 à 02/02/2026</p>
+      <ul>
+        <li>Conception d'un système de prise de vue automatisée basé sur Raspberry Pi, destiné à capturer des images d'éoliennes et à évaluer leur visibilité.</li>
+        <li>Programmation embarquée, traitement d'image et transmission des données.</li>
+        <li>Optimisation des performances système et gestion des composants électroniques.</li>
+      </ul>
       <p><strong>Technologies utilisées :</strong> OpenShift, ArgoCD, GitLab, Ansible, HashiCorp Vault</p>
-      <a href="https://github.com/Ornel04/Stage-en-D-veloppement-Embarqu---Geophom" class="github-link" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/Ornel04/Ingénieur_DevOps_Cloud" class="github-link" target="_blank" rel="noopener noreferrer">
+        <svg class="github-icon" viewBox="0 0 24 24">
+          <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+        </svg>
+        Projet disponible sur GitHub
+      </a>
+    </div>
+  </div>
+
+  <div id="experience2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('experience2')">&times;</span>
+      <h3>Ingenieur SysOps - TBC Consulting </h3>
+      <p><strong>Période :</strong> 03/03/2025 à 05/09/2025</p>
+      <ul>
+        <li>Conception et déploiement d'une infrastructure réseau et serveur sécurisée et hautement disponible.</li>
+        <li>Configuration des équipements et mise en place de serveurs web.</li>
+        <li>Gestion de la sécurité et répartition du trafic.</li>
+        <li>Automatisation des déploiements et surveillance des systèmes.</li>
+        <li>Mise en œuvre de mécanismes de sauvegarde, de redondance et d'un Plan de Reprise d'Activité (PRA).</li>
+        <li>MCO & Fiabilité : participation active à la résolution d'incidents et à l'optimisation des performances des plateformes, configuration de VPN sécurisés.</li>
+
+      </ul>
+      <p><strong>Technologies utilisées :</strong> Tailscal, LAMP, OPNsense, Load balancers, Vagrant, Ansible, Zabbix</p>
+      <a href="https://github.com/Ornel04/Projet-Cloud-Computing" class="github-link" target="_blank" rel="noopener noreferrer">
         <svg class="github-icon" viewBox="0 0 24 24">
           <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
         </svg>
@@ -850,7 +923,7 @@
   <div id="experience1" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('experience1')">&times;</span>
-      <h3>Stage en Développement Embarqué - Geophom</h3>
+      <h3>Ingénieur en développement embarqué - Geophom</h3>
       <p><strong>Période :</strong> 15/07/2024 à 29/11/2024</p>
       <ul>
         <li>Conception d'un système de prise de vue automatisée basé sur Raspberry Pi, destiné à capturer des images d'éoliennes et à évaluer leur visibilité.</li>
